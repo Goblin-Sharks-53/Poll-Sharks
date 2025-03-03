@@ -8,6 +8,7 @@ import Login from './pages/Login-Page';
 import Register from './pages/Register.jsx'
 import PastPolls from './pages/PastPolls.jsx';
 import Results from './pages/Results.jsx'
+import PastPollsGraph from './pages/PastPolls-Graph.jsx'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/confirmation' element={<Confirmation />} />
         <Route path='/voting-page' element={<VotingPage />} />
         <Route path='/results' element ={<Results />} />
+        <Route path ='/pastPollsGraph' element = {<pastPollsGraph/>} />
       </Routes>
     </BrowserRouter>
   );

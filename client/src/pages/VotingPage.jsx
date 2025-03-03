@@ -81,21 +81,24 @@ function VotingPage() {
       alert('Couldn\'t delete vote' + ('Check votes remaining is 6, or if votes for a topic is 0'));
     }
   }
-console.log(pollTopics)
-console.log(JSON.stringify(pollTopics, null, 2))
+console.log('The value of pollTopics is',pollTopics)
 
   // TODO Create Submit Button and redirect to Results / Graphs
   //
   const submitHandleButtonClick = async () => {
     try{
-      
+      const updatedPollTopics = pollTopics.map((poll,index) => {
+       return poll.votes = votes[index]
+      })
+      console.log('The value of poll.votes is',updatedPollTopics)
       const response = await fetch('http://localhost:3000/user/updated-votes', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          pollName : `${pollName}`,
-          pollTopics: pollTopics,
-          code: `${code}`
+          // pollName : `${pollName}`,
+          // pollTopics: pollTopics,
+          votes: votes,
+          code: code
         }),
       });
       // console.log('The value of response.body is', response);

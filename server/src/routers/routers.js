@@ -28,7 +28,7 @@ router.post('/create-poll', pollController.createPoll, (req, res) => {
   return res.status(200).send(res.locals.code);
 });
 
-router.get('/pastpolls', pollController.pastPolls, (req, res) => {
+router.get('/pastpolls:username', pollController.pastPolls, (req, res) => {
   return res.status(200).send(res.locals.polls);
 });
 
@@ -38,6 +38,10 @@ router.get('/voting-page:code', pollController.votingPage, (req, res) => {
 
 router.patch('/updated-votes',pollController.updatedVotes,(req, res) => {
   return res.status(200).send('The votes have been updated');
+})
+
+router.get('/results:code', pollController.getResults, (req, res) => {
+  return res.status(200).send(res.locals.data);
 })
 
 //Export the router---------------------------

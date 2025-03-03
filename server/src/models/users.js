@@ -19,6 +19,7 @@ const pollSchema = new mongoose.Schema({
   pollName: { type: String },
   pollTopics: [{ pollTopic: { type: String }, votes: { type: Number } }],
   code: { type: String },
+  createdBy: { type: String },
 });
 
 const User = mongoose.model('User', userSchema);

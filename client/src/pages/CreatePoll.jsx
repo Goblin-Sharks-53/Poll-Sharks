@@ -51,6 +51,7 @@ function CreatePoll() {
           pollName: pollName, // poll name user is voting on (this should have been passed down from Dashboard)
           // TODO set up for multiple topics
           pollTopics: pollTopics, // name of topics user selected
+          createdBy: username,
         }),
       });
 

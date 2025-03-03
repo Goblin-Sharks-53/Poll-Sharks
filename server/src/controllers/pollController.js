@@ -37,8 +37,8 @@ pollController.dashboardVoteNow = async (req, res, next) => {
 
 pollController.createPoll = async (req, res, next) => {
   try {
-    await Poll.deleteMany({})
-    const { pollName, pollTopics } = req.body;
+    // await Poll.deleteMany({});
+    const { pollName, pollTopics, createdBy } = req.body;
     const generateUniqueCode = async () => {
       let code;
       let exists = true;
@@ -49,13 +49,18 @@ pollController.createPoll = async (req, res, next) => {
       return code;
     };
     const code = await generateUniqueCode();
-    const pollTopicsWithVotes = pollTopics.map(topic => ({
+    const pollTopicsWithVotes = pollTopics.map((topic) => ({
       ...topic,
-      votes: 0
-    }))
-    const poll = await Poll.create({ pollName, pollTopics:pollTopicsWithVotes , code });
+      votes: 0,
+    }));
+    const poll = await Poll.create({
+      pollName,
+      pollTopics: pollTopicsWithVotes,
+      code,
+      createdBy,
+    });
     // console.log('The value of poll is', poll);
-    res.locals.code = code
+    res.locals.code = code;
     next();
   } catch (err) {
     return next({
@@ -67,29 +72,49 @@ pollController.createPoll = async (req, res, next) => {
 };
 
 pollController.pastPolls = async (req, res, next) => {
-  const poll = await Poll.find();
-    // console.log('The value of the poll is', poll);
-    res.locals.polls = poll
+  const username = req.params.username
+  const poll = await Poll.find({createdBy: username});
+  // console.log('The value of the poll is', poll);
+  res.locals.polls = poll;
   next();
 };
 
-pollController.votingPage = async (req,res,next) => {
-  const code = req.params.code
+pollController.votingPage = async (req, res, next) => {
+  const code = req.params.code;
   // console.log('The value of the code is ',code)
 
-  const poll = await Poll.findOne({code})
+  const poll = await Poll.findOne({ code });
   // console.log('The value of the poll is ', poll)
-  res.locals.poll = poll
-  next()
+  res.locals.poll = poll;
+  next();
+};
+
+pollController.updatedVotes = async (req, res, next) => {
+  // console.log('The value of req.body is',req.body)
+  const votes = req.body.votes;
+  // console.log('The value of incoming votes is',votes)
+  const updatedPoll = await Poll.findOne({ code: req.body.code });
+  // console.log('The value of the updated poll is',updatedPoll.pollTopics)
+  const pollTopics = updatedPoll.pollTopics;
+  // console.log('The value of the updated poll is', pollTopics)
+  pollTopics.map((poll, index) => {
+    // console.log('The value of poll.votes is',poll.votes)
+    // console.log('The value of votes[index]is', votes[index])
+    return (poll.votes = Number(poll.votes) + votes[index]);
+  });
+  // console.log('The value of updatedPollTopics is', updatedPoll);
+  await Poll.findOneAndUpdate({ code: req.body.code },  updatedPoll );
+  next();
+};
+
+pollController.getResults = async (req, res, next) => {
+  //get the data from database
+  // console.log(req.params.code)
+  const code = req.params.code
+  const data = await Poll.findOne({ code: code })
+  // console.log('the value of data is', data)
+  res.locals.data = data
+  next ()
 }
-
-pollController.updatedVotes = async (req,res,next) => {
-  console.log('The value of req.body is',req.body)
-  // const updatedPoll = await Poll.findOne({code:req.body.code})
-  // console.log('The value of the updated poll is',updatedPoll)
-  next()
-}
-
-
 
 module.exports = pollController;

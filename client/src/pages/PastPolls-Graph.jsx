@@ -2,7 +2,7 @@ import { useState } from 'react';
 import '../App.css';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-const PastPolls = () => {
+const PastPollsGraph = () => {
   const navigate = useNavigate();
 
   // bringing data from: dashboard?
@@ -15,7 +15,9 @@ const PastPolls = () => {
 
   const getPastPolls = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/user/pastpolls${username}`);
+      const response = await fetch(
+        `http://localhost:3000/user/pastpolls${username}`
+      );
       const data = await response.json();
       console.log(data);
       setPolls(data);
@@ -51,4 +53,4 @@ const PastPolls = () => {
   );
 };
 
-export default PastPolls;
+export default PastPollsGraph;

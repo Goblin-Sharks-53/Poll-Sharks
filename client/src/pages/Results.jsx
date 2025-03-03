@@ -35,36 +35,9 @@ const Results = () => {
         );
         // we are setting our poll topic state to the sorted topics ()
         setPollTopics(sortedTopics);
-
-        // const pollTopicsLength = data.pollTopics;
-        // // console.log('The value of pollTopics is',pollTopicsLength)
-        // // sort instead of push via for loop so we can have an array whose largest number comes first.
-        // const tempArr = [];
-        // for (let i = 0; i < pollTopicsLength.length; i++) {
-        //   tempArr.push(0);
-        // }
-        // setVotes(tempArr);
-        // // console.log('The value of tempArr is',tempArr)
       })
       .catch((error) => {
         console.error('error fetching data', error);
-        // TODO delete code below when the backend is connected (FAKE CODE)
-        const data = {
-          pollName: 'fake poll',
-          pollTopics: [
-            { pollTopic: 'Topic 1', votes: 0 },
-            { pollTopic: 'Topic 2', votes: 2 },
-            { pollTopic: 'Topic 3', votes: 3 },
-          ],
-        };
-        setPoll(data);
-        setPollName(data.pollName);
-        // must sort our poll topics (high to low)
-        const sortedTopics = [...data.pollTopics].sort(
-          (a, b) => b.votes - a.votes
-        );
-        //
-        setPollTopics(sortedTopics);
       });
   }, [url]);
 
@@ -93,7 +66,7 @@ const Results = () => {
               } else {
                 rank = `${topicIndex + 1}th Place`;
               }
-              //   inside our list, each poll topic will be rendered as a list item
+              {/* inside our list, each poll topic will be rendered as a list item */}
               return (
                 <li key={topicIndex}>
                   {rank}: {topic.pollTopic} - {topic.votes} votes
