@@ -1,0 +1,103 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #cde8e5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 36px;
+  color: #333;
+  margin: 0;
+  padding-bottom: 16px;
+}
+
+.inputs {
+  margin: 5px 0;
+  text-align: center;
+}
+
+.inputs label {
+  font-size: 18px;
+  color: #333;
+  display: block;
+  margin-bottom: 3px;
+  font-weight: 700;
+  pad: 10px;
+}
+
+.inputs input {
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 2px;
+  font-size: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  background-color: #cde8e5;
+  border-radius: 10px;
+  margin-top: 90px;
+  padding: 20px;
+}
+
+button {
+  padding: 12px 30px;
+  margin: 10px 0px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+.inputs:first-of-type {
+  margin-bottom: 16px;
+}
+
+button:first-of-type {
+  background-color: #00879e;
+  color: white;
+}
+
+button:first-of-type:hover {
+  background-color: #31363f;
+}
+
+button:last-of-type {
+  background-color: #00879e;
+  color: white;
+}
+
+button:last-of-type:hover {
+  background-color: #31363f;
+}
+
+@media (max-width: 600px) {
+  .inputs input {
+    width: 80%;
+  }
+
+  .card {
+    height: auto;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  button {
+    width: 100%;
+    margin: 10px 0;
+  }
+}

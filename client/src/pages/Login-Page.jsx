@@ -2,6 +2,7 @@
 import { useRef, useState } from 'react';
 import '../App.css';
 import { useNavigate } from 'react-router-dom';
+import './Login-Page.css';
 
 function Login() {
   // declare navigate to change webaddresses
@@ -30,7 +31,7 @@ function Login() {
         // the line below is currently refreshing the page. we can test a redirect with another page once we have one, but it currently isn't correct.
         // window.location.href = '/' //put page structure for Dashboard/Homepage here.
         navigate('/dashboard', {
-          state: { username: `${username}`},
+          state: { username: `${username}` },
         });
       } else {
         const error = await response.json();
@@ -51,12 +52,12 @@ function Login() {
     <>
       <h1>Log In</h1>
       <div className='inputs'>
-        Username
+        <label className='label'>Username</label>
         <input type='text' ref={usernameRef} />
       </div>
       <div className='inputs'>
         {' '}
-        Password
+        <label className='label'>Password</label>
         <input type='password' ref={passwordRef} />
       </div>
       <div className='card'>

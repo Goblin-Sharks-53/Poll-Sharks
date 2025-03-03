@@ -35,7 +35,24 @@ function Dashboard() {
   // TODO Create Vote Now Button
   const voteNowHandleButtonClick = async () => {
     // redirect user to VotingPage.jsx
-    navigate('/voting-page', { state: { username: `${username}` } });
+  try{
+const response = await fetch (`http://localhost:3000/user/results${codeName}`, {
+  method: 'GET',
+  headers: { 'Content-Type': 'application/json' },
+  
+})
+console.log(response)
+if (response.ok){
+  navigate('/voting-page', { state: { username: `${username}`,
+     code: `${codeName}`,
+     } });
+}
+else{ alert('Please input a valid poll code')}
+  }
+  catch (error) {
+    console.error(error);
+  }
+    
   };
 
   // TODO Create View Past Polls Button

@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import '../App.css';
+import './Register.css';
 import { useNavigate } from 'react-router-dom';
 
 function Register() {
@@ -41,12 +42,12 @@ function Register() {
     <>
       <h1>Register</h1>
       <div className='inputs'>
-        username
+        <label className='label'>Username</label>
         <input type='text' ref={usernameRef} />
       </div>
       <div className='inputs'>
         {' '}
-        Password
+        <label className='label'>Password</label>
         <input type='password' ref={passwordRef} />
       </div>
       <div className='card'>
