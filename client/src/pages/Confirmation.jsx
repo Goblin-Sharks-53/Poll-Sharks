@@ -1,14 +1,11 @@
 //* Confirmation page after user clicked Create Poll
 
-import React, { useState } from 'react';
+import React from 'react';
 
 // allows for user to be redirect to another page (back to Dashboard)
 import { useNavigate, useLocation } from 'react-router-dom';
 
 function Confirmation() {
-  //can this be deleted?
-  // const [userName, setUserName] = useState('username');
-
   const navigate = useNavigate();
 
   // bringing data from: dashboard?
@@ -18,27 +15,12 @@ function Confirmation() {
   const { username, code } = data;
 
   // TODO Create where users click Vote Now
-  // function sends the user's response to the server when they click the button (Create Poll)
-  // create a new poll record in mongoose w/ fetch post req
-  const voteNowHandleButtonClick =
-    // async
-    () => {
-      // try {
-      //   const response = await fetch('/', {
-      //     method: 'GET',
-      //   });
-
-      //   if (response.ok) {
-      navigate('/voting-page', {
-        state: { username: `${username}`, code: `${code}` },
-      });
-      //   } else {
-      //     console.error('Failed to get the requested poll');
-      //   }
-      // } catch (error) {
-      //   console.error('Error:', error);
-      // }
-    };
+  //
+  const voteNowHandleButtonClick = () => {
+    navigate('/voting-page', {
+      state: { username: `${username}`, code: `${code}` },
+    });
+  };
 
   return (
     <div>
