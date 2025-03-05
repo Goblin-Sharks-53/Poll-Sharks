@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 // allows for user to be redirect to another page (back to Dashboard)
 import { useNavigate, useLocation } from 'react-router-dom';
+import NavBar from './NavBar.jsx';
 
 // TODO consider a delter button for extra topics created but no longer want ?
 
@@ -97,6 +98,8 @@ function CreatePoll() {
   };
 
   return (
+    <>
+    <NavBar/>
     <div>
       {/* style inline els on the same line */}
       <h1 style={{ display: 'inline' }}>Name Your Poll: </h1>
@@ -142,6 +145,7 @@ function CreatePoll() {
         Dashboard{' '}
       </button>
     </div>
+    </>
   );
 }
 
