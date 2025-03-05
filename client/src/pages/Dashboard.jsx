@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 // need in order to direct user to another page (Create a New Poll page or Voting page)
 import { useNavigate, useLocation } from 'react-router-dom';
+import NavBar from './NavBar.jsx';
 
 function Dashboard() {
   // Using usestate to store the user’s response
@@ -63,6 +64,8 @@ else{ alert('Please input a valid poll code')}
 
   // everything in here gets rendered to the browser
   return (
+    <>
+    <NavBar />
     <div>
       <h1> DASHBOARD</h1>
       <h2>Hello, {username}</h2>
@@ -89,6 +92,7 @@ else{ alert('Please input a valid poll code')}
         </button>
       </div>
     </div>
+    </>
   );
 }
 // export Dashboard component so that it can be used in other files
