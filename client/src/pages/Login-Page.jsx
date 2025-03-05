@@ -4,7 +4,7 @@ import '../App.css';
 import { useNavigate } from 'react-router-dom';
 import './Login-Page.css';
 import NavBar from './NavBar.jsx';
-import { Link } from 'react-router-dom';
+
 
 function Login() {
   // declare navigate to change webaddresses
@@ -53,7 +53,7 @@ function Login() {
   return (
     <>
       <NavBar />
-      <div className='loginContainer'>
+      <div>
         <h1>Log In</h1>
         <div className='inputs'>
           <label className='label'>Username</label>
