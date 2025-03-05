@@ -3,12 +3,14 @@ require("dotenv").config();
 
 const mongoose = require("mongoose");
 //let password = Qw0PGEwC2Ip6wAHk
-const mongoURI = process.env.MONGO_URITWO;
+const mongoURI = process.env.MONGO_URI;
 
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-});
+})
+.then(() => console.log('✅ MongoDB Connected'))
+.catch((err) => console.error('❌ MongoDB Connection Error:', err));
 
 const userSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
