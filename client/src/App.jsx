@@ -18,7 +18,7 @@ function App() {
         <Route path='/' element={<Login />} />
         <Route path='/register' element={<Register/>} />
         <Route path='/dashboard' element={<Dashboard />} />
-        <Route path='/pastpolls' element={<PastPolls />} />git 
+        <Route path='/pastpolls' element={<PastPolls />} />
         <Route path='/create-poll' element={<CreatePoll />} />
         <Route path='/confirmation' element={<Confirmation />} />
         <Route path='/voting-page' element={<VotingPage />} />
