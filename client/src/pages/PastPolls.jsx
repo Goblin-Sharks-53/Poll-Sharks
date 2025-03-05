@@ -11,6 +11,7 @@ const PastPolls = () => {
   const data = location.state;
   // deconstructed data
   const { username } = data;
+  console.log(data)
 
   const [polls, setPolls] = useState([]);
 
@@ -58,7 +59,7 @@ const PastPolls = () => {
        Past Polls Graphs
       </button>
     </div>
-  </>
+    </>
   );
 };
 
