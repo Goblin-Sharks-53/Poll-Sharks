@@ -10,6 +10,7 @@ import PastPolls from './pages/PastPolls.jsx';
 import Results from './pages/Results.jsx'
 import PastPollsGraph from './pages/PastPolls-Graph.jsx'
 import ResultsGraph from './pages/Results-Graph.jsx';
+import HomePage from './pages/HomePage.jsx'
 
 function App() {
   return (
