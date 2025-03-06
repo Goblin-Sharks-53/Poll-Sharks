@@ -24,7 +24,7 @@ const renderWithRouter = (component) => {
 describe('Register Page', () => {
   // this is to be done before EVERY test, makes sure fetch is mocked
   beforeEach(() => {
-    // mocks `fetch()` to prevent API issues
+    // mocks `fetch()` to control the return value of the response. Whatever we pass to mockResolvedValue is what the fetch will return
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,
     });

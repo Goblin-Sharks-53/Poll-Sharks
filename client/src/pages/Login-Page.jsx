@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import './Login-Page.css';
 // import NavBar from './NavBar.jsx';
 
-
 function Login() {
   // declare navigate to change webaddresses
   const navigate = useNavigate();
