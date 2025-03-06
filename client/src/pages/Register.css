@@ -1,30 +1,21 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #cde8e5;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
-}
 
 h1 {
   font-size: 36px;
-  color: #333;
+  color: #ddd4d4;
   margin: 0;
   padding-bottom: 16px;
 }
 
 .inputs {
+  width: 47%;
   margin: 5px 0;
   text-align: center;
 }
 
 .inputs label {
+  width: 100%;
   font-size: 18px;
-  color: #333;
+  color: #bab5b5;
   display: block;
   margin-bottom: 3px;
   font-weight: 700;
@@ -32,12 +23,13 @@ h1 {
 }
 
 .inputs input {
+  width: 92%;
   padding: 10px;
-  width: 250px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-top: 2px;
   font-size: 16px;
+  color:#333
 }
 
 .card {
@@ -52,7 +44,7 @@ h1 {
   padding: 20px;
 }
 
-button {
+/* button {
   padding: 12px 30px;
   margin: 10px 0px;
   border: none;
@@ -80,7 +72,7 @@ button:last-of-type {
 
 button:last-of-type:hover {
   background-color: #31363f;
-}
+} */
 
 @media (max-width: 600px) {
   .inputs input {
