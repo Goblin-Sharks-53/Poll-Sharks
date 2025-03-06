@@ -3,8 +3,7 @@ import { useRef, useState } from 'react';
 import '../App.css';
 import { useNavigate } from 'react-router-dom';
 import './Login-Page.css';
-import NavBar from './NavBar.jsx';
-
+// import NavBar from './NavBar.jsx';
 
 function Login() {
   // declare navigate to change webaddresses
@@ -52,7 +51,7 @@ function Login() {
 
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> */}
       <div>
         <h1>Log In</h1>
         <div className='inputs'>
