@@ -168,25 +168,20 @@ const submitHandleButtonClick = async () => {
 // added new buttons for guest vote
   return (
     <div className="home-page">
-      <nav className="nav-bar">
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/login">Login</Link></li>
-          <li><Link to="/guest-voting">Guest Voting</Link></li>
-          <li><Link to="/register">Register</Link></li> {/* Register button */}
-        </ul>
-      </nav>
-
+     
       <section className="content">
-        <h1>Welcome to the Polls Page!</h1>
+        
+        <h1>Welcome to the Cosmo-Poll-itan!</h1>
         <p>Here you can vote on polls, view results, and more. Please log in to create or manage your polls, or vote as a guest.</p>
 
         {!isLoggedIn ? (
           <>
-            <h2>Login to Continue</h2>
-            <div className="inputs">
-              <label className="label">Username</label>
-              <input type="text" ref={usernameRef} />
+              <h2>Login to Continue</h2>
+            <div id='loginContainter'>
+              <div className='inputs'>
+                <label className='label'>Username</label>
+                <input type='text' ref={usernameRef} />
+              </div>
             </div>
             <div className="inputs">
               <label className="label">Password</label>
