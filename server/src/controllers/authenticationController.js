@@ -23,13 +23,14 @@ authenticationController.login = async (req, res, next) => {
     if (!matched) {
       return res.status(400).json({ message: "incorrect password" });
     }
-    const payload = { userId: user._id };
+     const payload = { userId: user._id };
 
     const token = jwt.sign(payload, process.env.JWT_SECRET, {
       expiresIn: "1hr",
     });
 
-    res.status(200).json({ message: "loged in ", token });
+
+    res.status(200).json({ message: "logged in ", token });
 
     return next();
   } catch (error) {

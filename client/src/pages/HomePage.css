@@ -1,0 +1,170 @@
+/* General Page Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212;
+  color: #fff; /* Ensures all text is white for contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Home Page Container */
+.home-page {
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  padding: 30px;
+  background: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Navigation Bar */
+.nav-bar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.nav-bar ul li {
+  display: inline;
+}
+
+.nav-bar ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-bar ul li a:hover {
+  color: #00aaff;
+}
+
+/* Main Content */
+.content h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff; /* Ensures heading is visible */
+}
+
+.content p {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-bottom: 20px;
+  color: #ddd; /* Light gray for readability */
+}
+
+/* Form Inputs */
+.inputs {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #fff; /* Ensures labels are visible */
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #2a2a2a;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+input::placeholder {
+  color: #bbb; /* Lighter gray placeholder text */
+}
+
+input:focus {
+  background: #333;
+  border-left: 4px solid #00aaff;
+}
+
+/* Buttons */
+.card {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  flex: 1;
+  margin: 5px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:first-child {
+  background: #00aaff;
+  color: #fff;
+}
+
+button:first-child:hover {
+  background: #0088dd;
+}
+
+button:last-child {
+  background: transparent;
+  color: #00aaff;
+  border: 2px solid #00aaff;
+}
+
+button:last-child:hover {
+  background: #00aaff;
+  color: #fff;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  margin-top: 20px;
+}
+
+.cta-btn {
+  background: #ff0077;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.cta-btn:hover {
+  background: #cc0055;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .home-page {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .nav-bar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
