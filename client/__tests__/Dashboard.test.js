@@ -32,16 +32,17 @@ describe('Unit testing React components', () => {
     render(<Dashboard />);
     // screen.debug();
     const buttons = screen.getAllByRole('button');
-    expect(buttons.length).toBe(3);
+    expect(buttons.length).toBe(4);
   });
 
   test('Contains three buttons with correct names', () => {
     render(<Dashboard />);
     // Test Create Poll button
     const buttons = screen.getAllByRole('button');
-    expect(buttons[0]).toHaveTextContent('Create a New Poll');
-    expect(buttons[1]).toHaveTextContent('Vote Now!');
-    expect(buttons[2]).toHaveTextContent('View Past Polls');
+    expect(buttons[0]).toHaveTextContent('Logout');
+    expect(buttons[1]).toHaveTextContent('Create a New Poll');
+    expect(buttons[2]).toHaveTextContent('Vote Now!');
+    expect(buttons[3]).toHaveTextContent('View Past Polls');
   });
 
   test('Creat a New Poll is invoked on click', async () => {
