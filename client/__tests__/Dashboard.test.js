@@ -28,14 +28,14 @@ describe('Unit testing React components', () => {
     expect(screen.getByText(/Hello, TestUser/i)).toBeInTheDocument();
   });
 
-  test('Contains three buttons', () => {
+  test('Contains four buttons', () => {
     render(<Dashboard />);
     // screen.debug();
     const buttons = screen.getAllByRole('button');
     expect(buttons.length).toBe(4);
   });
 
-  test('Contains three buttons with correct names', () => {
+  test('Contains four buttons with correct names', () => {
     render(<Dashboard />);
     // Test Create Poll button
     const buttons = screen.getAllByRole('button');
