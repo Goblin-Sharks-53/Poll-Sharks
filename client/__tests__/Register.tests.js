@@ -20,7 +20,7 @@ const renderWithRouter = (component) => {
   return render(<BrowserRouter>{component}</BrowserRouter>);
 };
 
-// TESTS
+//? TESTS
 describe('Register Page', () => {
   // this is to be done before EVERY test, makes sure fetch is mocked
   beforeEach(() => {
