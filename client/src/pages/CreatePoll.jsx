@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 // allows for user to be redirect to another page (back to Dashboard)
 import { useNavigate, useLocation } from 'react-router-dom';
+import NavBar from './NavBar.jsx';
 
 // TODO consider a delter button for extra topics created but no longer want ?
 
@@ -11,7 +12,7 @@ function CreatePoll() {
   const [pollTopics, setPollTopics] = useState([
     { pollTopic: '' },
     { pollTopic: '' },
-    { pollTopic: '' },
+
   ]);
 
   // console.log('the value of pollName is ', pollName)
@@ -26,11 +27,19 @@ function CreatePoll() {
   const { username } = data;
 
   // TODO create add topics button
-  const addTopicsHandleButtonClick = async () => {
+  const addTopicsHandleButtonClick =  () => {
     //
     setPollTopics([...pollTopics, { pollTopic: '' }]);
   };
 
+
+  const deleteTopicsHandleButtonClick = (indexDelete) => {
+    // Filter out the item whose index matches indexDelete
+    setPollTopics((currPoll) =>
+      currPoll.filter((_, index) => index !== indexDelete)
+    );
+  };
+  
   // TODO create post req to this route/controller
   // pollController.createPol
   // TODO Create Poll Button
@@ -97,6 +106,8 @@ function CreatePoll() {
   };
 
   return (
+    <>
+    <NavBar/>
     <div>
       {/* style inline els on the same line */}
       <h1 style={{ display: 'inline' }}>Name Your Poll: </h1>
@@ -116,16 +127,17 @@ function CreatePoll() {
       {/*  iterate over pollTopics (state) and render an input tag for each poll topic. used map function to transform pollTopics into input tags for each poll topic */}
       {pollTopics.map((topic, index) => {
         return (
-          <div>
+          <div key = {index}>
             {/* The text box for user input */}
             <input
-              key = {index}
+              
               type='text'
               value={topic.pollTopic}
               onChange={(e) => handlePollTopicChange(index, e.target.value)}
               placeholder='Type poll topic'
               className='text-input'
             />
+            <button onClick ={() => deleteTopicsHandleButtonClick(index)}>🗑️</button>
           </div>
         );
       })}
@@ -142,6 +154,7 @@ function CreatePoll() {
         Dashboard{' '}
       </button>
     </div>
+    </>
   );
 }
 

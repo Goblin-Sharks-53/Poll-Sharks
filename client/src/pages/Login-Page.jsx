@@ -3,7 +3,14 @@ import { useRef, useState } from 'react';
 import '../App.css';
 import { useNavigate } from 'react-router-dom';
 import './Login-Page.css';
+// import NavBar from './NavBar.jsx';
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 
+>>>>>>> development
+=======
+>>>>>>> development
 
 function Login() {
   // declare navigate to change webaddresses
@@ -20,7 +27,8 @@ function Login() {
     console.log(username);
     console.log(password);
     try {
-      console.log('hello Anthony');
+      console.log('hello Cosmo');
+      //below is making fethc request to server
       const response = await fetch('http://localhost:3000/user/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -51,21 +59,23 @@ function Login() {
 
   return (
     <>
-      <h1>Log In</h1>
-      <div className='inputs'>
-        <label className='label'>Username</label>
-        <input type='text' ref={usernameRef} />
-      </div>
-      <div className='inputs'>
-        {' '}
-        <label className='label'>Password</label>
-        <input type='password' ref={passwordRef} />
-      </div>
-      <div className='card'>
-        {/* onclick, this should update the refsand  */}
-        <div>
-          <button onClick={loginRequest}>Login</button>
-          <button onClick={registerButtonClick}>Register</button>
+      {/* <NavBar /> */}
+      <div>
+        <h1>Log In</h1>
+        <div className='inputs'>
+          <label className='label'>Username</label>
+          <input type='text' ref={usernameRef} />
+        </div>
+        <div className='inputs'>
+          {' '}
+          <label className='label'>Password</label>
+          <input type='password' ref={passwordRef} />
+        </div>
+        <div className='card'>
+          <div>
+            <button onClick={loginRequest}>Login</button>
+            <button onClick={registerButtonClick}>Register</button>
+          </div>
         </div>
       </div>
     </>

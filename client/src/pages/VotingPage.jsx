@@ -3,6 +3,7 @@ import "./style.css";
 import React, { use, useEffect, useState } from "react";
 // allows for user to be redirect to another page (back to Dashboard)
 import { useNavigate, useLocation } from "react-router-dom";
+import NavBar from './NavBar.jsx';
 
 function VotingPage() {
   const [polls, setPolls] = useState([]);
@@ -124,6 +125,8 @@ function VotingPage() {
   };
 
   return (
+    <>
+    <NavBar />
     <div>
       <h1>Casting your Vote</h1>
       <p>Votes Remaining:{votesRemaining} </p>
@@ -160,6 +163,7 @@ function VotingPage() {
         </button>
       </div>
     </div>
+   </> 
   );
 }
 
