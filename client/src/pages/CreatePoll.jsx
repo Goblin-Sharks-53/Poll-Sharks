@@ -12,7 +12,7 @@ function CreatePoll() {
   const [pollTopics, setPollTopics] = useState([
     { pollTopic: '' },
     { pollTopic: '' },
-    { pollTopic: '' },
+
   ]);
 
   // console.log('the value of pollName is ', pollName)
@@ -27,11 +27,19 @@ function CreatePoll() {
   const { username } = data;
 
   // TODO create add topics button
-  const addTopicsHandleButtonClick = async () => {
+  const addTopicsHandleButtonClick =  () => {
     //
     setPollTopics([...pollTopics, { pollTopic: '' }]);
   };
 
+
+  const deleteTopicsHandleButtonClick = (indexDelete) => {
+    // Filter out the item whose index matches indexDelete
+    setPollTopics((currPoll) =>
+      currPoll.filter((_, index) => index !== indexDelete)
+    );
+  };
+  
   // TODO create post req to this route/controller
   // pollController.createPol
   // TODO Create Poll Button
@@ -129,6 +137,7 @@ function CreatePoll() {
               placeholder='Type poll topic'
               className='text-input'
             />
+            <button onClick ={() => deleteTopicsHandleButtonClick(index)}>🗑️</button>
           </div>
         );
       })}

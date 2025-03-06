@@ -20,10 +20,12 @@ const NavBar = () => {
     navigate('/create-poll', { state: { username: `${username}` } });
   };
 
-//   const homeHandleClick = async () => {
-//     //redirect to DashBoard
-//     navigate('/dashboard')
-//   }
+  const handleClickLogout = () => {
+    localStorage.removeItem("token");
+    navigate('/');
+};
+
+  
   return (
     <div className='navBar'>
        <span
@@ -45,7 +47,7 @@ const NavBar = () => {
       >
         CREATE POLLS
       </span>
-      <button>Logout</button>
+      <button onClick={handleClickLogout}>Logout</button>
     </div>
   );
 };
