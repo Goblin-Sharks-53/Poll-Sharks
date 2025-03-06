@@ -21,7 +21,8 @@ function Login() {
     console.log(username);
     console.log(password);
     try {
-      console.log('hello Anthony');
+      console.log('hello Cosmo');
+      //below is making fethc request to server
       const response = await fetch('http://localhost:3000/user/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

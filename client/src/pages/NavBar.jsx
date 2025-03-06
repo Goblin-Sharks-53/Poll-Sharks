@@ -20,10 +20,7 @@ const NavBar = () => {
     navigate('/create-poll', { state: { username: `${username}` } });
   };
 
-//   const homeHandleClick = async () => {
-//     //redirect to DashBoard
-//     navigate('/dashboard')
-//   }
+  
   return (
     <div className='navBar'>
        <span
