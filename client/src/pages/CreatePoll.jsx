@@ -127,10 +127,10 @@ function CreatePoll() {
       {/*  iterate over pollTopics (state) and render an input tag for each poll topic. used map function to transform pollTopics into input tags for each poll topic */}
       {pollTopics.map((topic, index) => {
         return (
-          <div>
+          <div key = {index}>
             {/* The text box for user input */}
             <input
-              key = {index}
+              
               type='text'
               value={topic.pollTopic}
               onChange={(e) => handlePollTopicChange(index, e.target.value)}

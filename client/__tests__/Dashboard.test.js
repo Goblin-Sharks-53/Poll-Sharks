@@ -82,7 +82,7 @@ describe('Unit testing React components', () => {
     await userEvent.click(screen.getByText('Vote Now!'));
     // suppose to send GET request to url
     //await waitFor(() => {
-      expect(fetch).toHaveBeenCalledWith(`http://localhost:3000/user/results123`, {"headers": {"Content-Type": "application/json"}, "method": "GET"});
+      expect(fetch).toHaveBeenCalledWith(`http://localhost:3000/user/results123`, {'headers': {'Content-Type': 'application/json'}, 'method': 'GET'});
       expect(mockNavigate).toHaveBeenCalledWith('/voting-page', {
         state: { username: 'TestUser', code: '123' },
       });
@@ -97,7 +97,7 @@ describe('Unit testing React components', () => {
       expect(mockNavigate).toHaveBeenCalledWith('/pastpolls', {
         state: { username: 'TestUser' } // Mock location state
       });
-    })
+    });
     
   });
 
