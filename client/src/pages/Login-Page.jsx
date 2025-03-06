@@ -5,8 +5,11 @@ import { useNavigate } from 'react-router-dom';
 import './Login-Page.css';
 // import NavBar from './NavBar.jsx';
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
+>>>>>>> development
+=======
 >>>>>>> development
 
 function Login() {
