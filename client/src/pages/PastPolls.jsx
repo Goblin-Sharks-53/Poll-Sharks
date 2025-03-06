@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import '../App.css';
 import { useNavigate, useLocation } from 'react-router-dom';
+import NavBar from './NavBar.jsx';
 
 const PastPolls = () => {
   const navigate = useNavigate();
@@ -10,6 +11,7 @@ const PastPolls = () => {
   const data = location.state;
   // deconstructed data
   const { username } = data;
+  console.log(data)
 
   const [polls, setPolls] = useState([]);
 
@@ -25,6 +27,8 @@ const PastPolls = () => {
   };
 
   return (
+    <>
+    <NavBar />
     <div>
       <h1>Past Polls:</h1>
       <button onClick={() => getPastPolls()}>Past Polls</button>
@@ -55,6 +59,7 @@ const PastPolls = () => {
        Past Polls Graphs
       </button>
     </div>
+    </>
   );
 };
 

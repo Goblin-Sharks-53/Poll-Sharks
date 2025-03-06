@@ -8,3 +8,4 @@ export default {
     '\\.(css|scss|less)$': 'identity-obj-proxy', // Mocks CSS imports
   },
 };
+

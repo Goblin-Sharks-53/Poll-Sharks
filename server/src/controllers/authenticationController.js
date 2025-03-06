@@ -26,7 +26,7 @@ authenticationController.login = async (req, res, next) => {
     const payload = { userId: user._id };
 
     const token = jwt.sign(payload, process.env.JWT_SECRET, {
-      expiresIn: "0.25hr",
+      expiresIn: "1hr",
     });
 
     res.status(200).json({ message: "loged in ", token });
