@@ -1,5 +1,6 @@
 import React, { use, useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import NavBar from './NavBar.jsx';
 
 const Results = () => {
   const navigate = useNavigate();
@@ -46,6 +47,8 @@ const Results = () => {
   }
 
   return (
+    <>
+    <NavBar />
     <div>
       <h1>Results</h1>
       <div>
@@ -94,6 +97,7 @@ const Results = () => {
         View Results Graph!
       </button>
     </div>
+    </>
   );
 };
 
