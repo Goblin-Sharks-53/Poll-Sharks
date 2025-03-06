@@ -3,7 +3,6 @@ import '../App.css';
 import './Register.css';
 import { useNavigate } from 'react-router-dom';
 
-
 function Register() {
   // declare navigate to change webaddresses
   const navigate = useNavigate();
@@ -49,7 +48,11 @@ function Register() {
       <div className='inputs'>
         {' '}
         <label className='label'>Password</label>
-        <input type='password' ref={passwordRef} />
+        <input
+          type='password'
+          data-testid='register-password'
+          ref={passwordRef}
+        />
       </div>
       <div className='card'>
         {/* onclick, this should update the refsand  */}
