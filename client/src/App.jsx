@@ -4,7 +4,7 @@ import Dashboard from './pages/Dashboard';
 import CreatePoll from './pages/CreatePoll';
 import VotingPage from './pages/VotingPage';
 import Confirmation from './pages/Confirmation';
-import Login from './pages/Login-Page';
+// import Login from './pages/Login-Page';
 import Register from './pages/Register.jsx'
 import PastPolls from './pages/PastPolls.jsx';
 import Results from './pages/Results.jsx'
@@ -15,7 +15,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Login />} />
+        <Route path='/' element={<HomePage />} />
         <Route path='/register' element={<Register/>} />
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/pastpolls' element={<PastPolls />} />
